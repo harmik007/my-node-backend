@@ -227,8 +227,7 @@ app.use(express.json()); // Parses incoming JSON data payloads
 // Set up the PostgreSQL connection pool using your updated DATABASE_URL
 const { Pool } = pg;
 const pool = new Pool({
-  // connectionString: process.env.DATABASE_URL,
-  connectionString: process.env.APP_DATABASE_URL || process.env.DATABASE_URL || process.env.POSTGRES_URL,
+  connectionString: process.env.DATABASE_URL,
   ssl: {
     rejectUnauthorized: false // Necessary for serverless Neon database connection layers
   }
